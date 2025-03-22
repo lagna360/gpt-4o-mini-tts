@@ -1,0 +1,93 @@
+/* Code Window Styling */
+.code-tabs {
+  display: flex;
+  margin-bottom: 0;
+  border-bottom: 1px solid #4b5563;
+}
+
+.section-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a78bfa;
+  padding: 4px 0;
+  border-bottom: 1px solid #4b5563;
+}
+
+.tab {
+  padding: 8px 16px;
+  background-color: #1f2937;
+  color: #9ca3af;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  margin-right: 2px;
+}
+
+.tab:hover {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.tab.active {
+  background-color: #2d3748;
+  color: #a78bfa;
+  border-bottom: 2px solid #a78bfa;
+}
+
+.code-window {
+  background-color: #1a1e2a;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.code-content {
+  margin: 0;
+  padding: 16px;
+  font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e5e7eb;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Scrollbar styling */
+.code-window::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-window::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+.code-window::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+.code-window::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Syntax highlighting */
+.code-content .keyword {
+  color: #a78bfa;
+}
+
+.code-content .string {
+  color: #34d399;
+}
+
+.code-content .comment {
+  color: #6b7280;
+}
+
+.code-content .number {
+  color: #f87171;
+}

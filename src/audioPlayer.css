@@ -1,0 +1,38 @@
+/* Custom Audio Player Styling */
+.audio-player-container {
+  padding: 1.5rem 2rem;
+  margin: 0 1rem;
+}
+
+.custom-audio-player {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+}
+
+/* Add spacing around the time display */
+.custom-audio-player::-webkit-media-controls-time-remaining-display,
+.custom-audio-player::-webkit-media-controls-current-time-display {
+  padding: 0 10px;
+}
+
+/* Improve overall audio controls spacing */
+.custom-audio-player::-webkit-media-controls-panel {
+  padding: 0 15px;
+}
+
+/* Ensure the timeline doesn't touch the time display */
+.custom-audio-player::-webkit-media-controls-timeline {
+  margin: 0 15px;
+}
+
+/* Add some space around the volume control */
+.custom-audio-player::-webkit-media-controls-volume-slider {
+  padding: 0 10px;
+}
+
+/* Ensure consistent spacing for all browsers */
+audio::-webkit-media-controls-enclosure {
+  border-radius: 20px;
+  padding: 0 10px;
+}
