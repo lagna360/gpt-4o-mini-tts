@@ -313,6 +313,16 @@ function App() {
               <summary className="text-lg font-medium cursor-pointer hover:text-purple-400 transition-colors">
                 Voice Settings
               </summary>
+              <div className="mt-2">
+                <a
+                  href="https://www.openai.fm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  ✨ Listen to Vibe examples and learn how to customize them →
+                </a>
+              </div>
               <div className="mt-4 space-y-6">
                 {/* Voice Selection */}
                 <div>
