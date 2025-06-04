@@ -72,6 +72,11 @@ function App() {
     setAudioUrl(''); // Reset audio URL when changing personalities
   };
 
+  // set default vibe by first vibe in VIBES
+  useEffect(() => {
+    setVibeWithConfig(getVibeConfig(VIBES[0]));
+  }, []);
+
   const generateSpeech = async () => {
     if (!apiKey) {
       setError('Please enter your OpenAI API key');
