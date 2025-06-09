@@ -16,7 +16,15 @@ const DEFAULT_SCRIPT = "So your card got flagged, huh? Typical. These banking sy
 const DEFAULT_INSTRUCTIONS = "Personality: World-weary private eye narrating your to-do list like a gritty crime mystery.\n\nVoice: Gravelly, slow, with the tone of someone who's seen too much.\n\nTone: Deadpan, cynical, and poetic—dripping with metaphors and noir slang.\n\nDialect: 1940s American, possibly from Brooklyn or Chicago, full of vintage street lingo.\n\nPronunciation: Drawled, with heavy consonants and dramatic pauses between lines.\n\nFeatures: Uses noir metaphors (\"That meeting? A ticking time bomb, see?\"), often breaks the fourth wall, and ends sentences like they're closing a case.";
 
 function App() {
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('openai_api_key') || '');
+  // Prefer to get API Key from Vite environment variable, otherwise fallback to localStorage
+  const getDefaultApiKey = () => {
+    const envKey = import.meta.env.VITE_OPENAI_API_KEY;
+    if (envKey && typeof envKey === 'string' && envKey.trim()) {
+      return envKey;
+    }
+    return localStorage.getItem('openai_api_key') || '';
+  };
+  const [apiKey, setApiKey] = useState(getDefaultApiKey);
   const [text, setText] = useState(DEFAULT_SCRIPT);
   const [instructions, setInstructions] = useState(DEFAULT_INSTRUCTIONS);
   const [voice, setVoice] = useState('onyx');
@@ -72,7 +80,7 @@ function App() {
     setAudioUrl(''); // Reset audio URL when changing personalities
   };
 
-  // set default vibe by first vibe in VIBES
+  // Set default vibe using the first vibe in VIBES
   useEffect(() => {
     setVibeWithConfig(getVibeConfig(VIBES[0]));
   }, []);
